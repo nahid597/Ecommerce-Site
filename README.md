@@ -1,5 +1,14 @@
 # Celleverything
+This is e-commerce web application.In this web UI is so much good. Here are two parts one is user part and other is admin part. In admin part anonymous user can not access. But anonymous user can see his or her order and home page. He can also buy anything if he will want.
+But in admin page only admin can access. A admin can add new product if he will want or admin can update any information and delete any product in database.
+In database section i use firebase. This is real time database. If admin can update anything user see this at a time.
 
+Here is also login part. Login with gmail account. If anyone login with his or her gmail account.
+
+Hopefully this is cool web site.
+
+
+## Version
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
 ## Development server
