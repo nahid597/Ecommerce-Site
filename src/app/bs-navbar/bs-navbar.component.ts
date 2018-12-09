@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ShoppingCart } from '../models/shopping-cart';
 import { AngularFireObject } from '@angular/fire/database';
 
+
 @Component({
   selector: 'app-bs-navbar',
   templateUrl: './bs-navbar.component.html',
