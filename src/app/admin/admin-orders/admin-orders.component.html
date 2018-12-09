@@ -1,0 +1,32 @@
+
+<h1>Orders</h1>
+
+<ng-container *ngIf = "orders$ | async as orders">
+  <table class="table">
+    <thead>
+      <tr>
+        <td class="font-weight-bold">Customers</td>
+        <td class="font-weight-bold">Date</td>
+        <td></td>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor = "let order of orders">
+        <td *ngIf = "order.shipping.Name !== null ">
+          {{order.shipping.Name}}
+        </td>
+        <td *ngIf = "order.shipping.Name !== null ">
+          {{order.datePlace | date:'dd/MM/yyyy'}}
+        </td>
+        <td>{{order.key}}</td>
+      </tr>
+    </tbody>
+  
+  </table>
+
+  <button class="btn btn-primary" (click)="viewOrders()">
+    view
+  </button>
+</ng-container>
+

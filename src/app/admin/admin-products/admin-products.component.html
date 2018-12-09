@@ -1,0 +1,79 @@
+
+<p>
+  <a routerLink="/admin/products/new" class="btn btn-primary">
+    New Product
+  </a>
+</p>
+
+<p>
+  <input  #search (keyup) = "filter(search.value)"  type="text" class="form-control" placeholder="search..">
+</p>
+
+<!--
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price | currency:'USD':true}} </td>
+    </ng-container>
+
+    <ng-container >
+      <td mat-cell *matCellDef="let product">
+        
+        <a [routerLink]="['/admin/products/'+ product.key]">Update</a>
+        <button type="button" (click)="delete(product.key)" class="btn btn-outline-dark">Delete</button>
+       </td>
+      
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+-->
+
+<div >
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of filterProducts">
+      <td>{{p.title}}</td>
+      <td>{{p.price | currency: 'USD':true}}</td>
+      <td>
+        <a [routerLink]="['/admin/products/'+ p.key]">Update</a>
+        <button type="button" (click)="delete(p.key)" class="btn btn-outline-dark">Delete</button>
+      </td>
+
+
+    </tr>
+  </tbody>
+
+</table>
+
+</div>
+
+  
+
+
+
+
+
+

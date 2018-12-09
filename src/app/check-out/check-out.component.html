@@ -1,0 +1,54 @@
+
+<div class="row">
+  <div class="col-6">
+
+    <div>
+
+      <form #check="ngForm" (ngSubmit)="placeOrder(check.value)">
+
+        <div class="form-group" style="margin-top:30px">
+          <label for="name">Name</label>
+          <input #Name="ngModel" ngModel name="Name" class="form-control" type="text" required id="Name" placeholder="Enter your name">
+          <div class="alert alert-danger" *ngIf="Name.touched && Name.invalid">
+            Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Address">Address</label>
+          <input #AddressLine1="ngModel" ngModel name="AddressLine1" class="form-control" type="text" required id="AddressLine1"
+            placeholder="Line1">
+          <div class="alert alert-danger" *ngIf="AddressLine1.touched && AddressLine1.invalid">
+            AddressLine1 is required
+          </div>
+          <input style="margin-top:20px" #AddressLine2="ngModel" ngModel name="AddressLine2" class="form-control" type="text"
+            required id="AddressLine2" placeholder="Line2">
+          <div class="alert alert-danger" *ngIf="AddressLine2.touched && AddressLine2.invalid">
+            AddressLine2 is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <input #City="ngModel" ngModel name="City" class="form-control" type="text" required id="City" placeholder="Enter your city name">
+          <div class="alert alert-danger" *ngIf="City.touched && City.invalid">
+            City is required
+          </div>
+        </div>
+
+        <button
+        [disabled]= "!check.valid"
+        class="btn btn-primary">
+          Place Order
+        </button>
+
+      </form>
+      </div>
+  </div>
+
+ <!-- <div class="col-6">
+      <app-shopping-cart-summary [cart] = "cart"></app-shopping-cart-summary>
+  </div>
+-->
+
+</div>

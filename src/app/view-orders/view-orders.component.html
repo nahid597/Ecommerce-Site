@@ -1,0 +1,46 @@
+
+<h1>Show Orders details</h1>
+
+<ng-container *ngIf = "orders$ | async as orders">
+
+  <table class="table">
+    <thead>
+        <tr>
+          <td>userId</td>
+          <td>Name</td>
+          <td>Date</td>
+          <td>Address1</td>
+          <td>Address2</td>
+          <td>City</td>
+          <td>Product</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{order.userId}}</td>
+          <td *ngIf="order.shipping.Name !== null ">
+            {{order.shipping.Name}}
+          </td>
+          <td *ngIf="order.shipping.datePlace !== null ">
+            {{order.datePlace | date:'dd/MM/yyyy'}}
+          </td>
+          <td>{{order.shipping.AddressLine1}}</td>
+          <td>{{order.shipping.AddressLine2}}</td>
+          <td>{{order.shipping.City}}</td>
+          <td *ngFor = "let num of order.items" >
+            {{num.product.title}} x {{num.quantity}} = {{num.totalPrice | currency:"USD":true}}</td>
+        </tr>
+    </tbody>
+  
+
+  </table>
+
+</ng-container>
+
+<div >
+  
+  <p *ngFor = "let orderview of order ">
+    {{orderview.shipping.Name}}
+  </p>
+</div>

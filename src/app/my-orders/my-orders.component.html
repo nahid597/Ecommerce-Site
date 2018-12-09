@@ -1,0 +1,29 @@
+<h1>My Orders</h1>
+
+<ng-container>
+  <table class="table">
+    <thead>
+      <tr>
+        <td class="font-weight-bold">Customers</td>
+        <td class="font-weight-bold">Date</td>
+        <td></td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let ord of order">
+        <td *ngIf="ord.shipping.Name !== null ">
+          {{ordr.shipping.Name}}
+        </td>
+        <td *ngIf="ord.shipping.Name !== null ">
+          {{ord.datePlace | date:'dd/MM/yyyy'}}
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <button class="btn btn-primary" (click)="viewOrders()">
+    view
+  </button>
+</ng-container>
